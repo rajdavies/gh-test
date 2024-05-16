@@ -36,6 +36,10 @@ jobs:
           git config --local user.name "GitHub Action"
           git add .
           git commit -m "Add changes"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
   
   # Single deploy job since we're just deploying
   deploy:
